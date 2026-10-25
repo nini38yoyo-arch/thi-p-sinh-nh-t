@@ -39,7 +39,6 @@ setInterval(updateCountdown, 1000);
 
 const fireworksCanvas = document.getElementById('fireworks');
 const ctx = fireworksCanvas.getContext('2d');
-
 const particles = [];
 const fireworks = [];
 const colors = ['#ff4d7d', '#ffb8d9', '#8e60ff', '#ffd76a', '#7ce7ff', '#ffffff'];
@@ -134,7 +133,7 @@ function animateFireworks() {
 
 animateFireworks();
 
-const heartBody = document.body;
+const body = document.body;
 for (let i = 0; i < 18; i += 1) {
   const heart = document.createElement('span');
   heart.textContent = i % 2 === 0 ? '❤' : '♡';
@@ -146,7 +145,7 @@ for (let i = 0; i < 18; i += 1) {
   heart.style.pointerEvents = 'none';
   heart.style.animation = `float ${Math.random() * 8 + 8}s ease-in-out infinite`;
   heart.style.animationDelay = `${Math.random() * 2}s`;
-  heartBody.appendChild(heart);
+  body.appendChild(heart);
 }
 
 const sparkleAnimation = document.createElement('style');
