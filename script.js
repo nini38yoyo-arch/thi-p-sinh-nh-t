@@ -31,12 +31,22 @@ body {
   overflow-x: hidden;
 }
 
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .bg-decor {
   position: fixed;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
 }
 
 .sparkle {
@@ -58,7 +68,7 @@ body {
 
 .page-shell {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 1160px;
   margin: 0 auto;
   padding: 48px 20px 80px;

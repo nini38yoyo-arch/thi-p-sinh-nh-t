@@ -37,7 +37,104 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-const body = document.body;
+const fireworksCanvas = document.getElementById('fireworks');
+const ctx = fireworksCanvas.getContext('2d');
+
+const particles = [];
+const fireworks = [];
+const colors = ['#ff4d7d', '#ffb8d9', '#8e60ff', '#ffd76a', '#7ce7ff', '#ffffff'];
+
+function resizeCanvas() {
+  fireworksCanvas.width = window.innerWidth;
+  fireworksCanvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function createFirework() {
+  const x = Math.random() * fireworksCanvas.width;
+  const y = fireworksCanvas.height;
+  const targetY = Math.random() * (fireworksCanvas.height * 0.45);
+
+  fireworks.push({
+    x,
+    y,
+    targetY,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    speed: 4 + Math.random() * 3,
+    radius: 2 + Math.random() * 2,
+  });
+}
+
+function createBurst(x, y, color) {
+  const count = 44 + Math.floor(Math.random() * 30);
+  for (let i = 0; i < count; i += 1) {
+    const angle = (Math.PI * 2 * i) / count;
+    const speed = 1.5 + Math.random() * 3.2;
+    particles.push({
+      x,
+      y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 42 + Math.random() * 30,
+      maxLife: 42 + Math.random() * 30,
+      color,
+      size: 2 + Math.random() * 2.5,
+    });
+  }
+}
+
+function animateFireworks() {
+  ctx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+
+  for (let i = fireworks.length - 1; i >= 0; i -= 1) {
+    const firework = fireworks[i];
+    firework.y -= firework.speed;
+
+    if (firework.y <= firework.targetY) {
+      createBurst(firework.x, firework.y, firework.color);
+      fireworks.splice(i, 1);
+      continue;
+    }
+
+    ctx.beginPath();
+    ctx.fillStyle = firework.color;
+    ctx.arc(firework.x, firework.y, firework.radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  for (let i = particles.length - 1; i >= 0; i -= 1) {
+    const particle = particles[i];
+    particle.x += particle.vx;
+    particle.y += particle.vy;
+    particle.vy += 0.04;
+    particle.life -= 1;
+
+    const alpha = particle.life / particle.maxLife;
+
+    ctx.beginPath();
+    ctx.fillStyle = particle.color;
+    ctx.globalAlpha = alpha;
+    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    if (particle.life <= 0) {
+      particles.splice(i, 1);
+    }
+  }
+
+  if (Math.random() < 0.04) {
+    createFirework();
+  }
+
+  requestAnimationFrame(animateFireworks);
+}
+
+animateFireworks();
+
+const heartBody = document.body;
 for (let i = 0; i < 18; i += 1) {
   const heart = document.createElement('span');
   heart.textContent = i % 2 === 0 ? '❤' : '♡';
@@ -49,7 +146,7 @@ for (let i = 0; i < 18; i += 1) {
   heart.style.pointerEvents = 'none';
   heart.style.animation = `float ${Math.random() * 8 + 8}s ease-in-out infinite`;
   heart.style.animationDelay = `${Math.random() * 2}s`;
-  body.appendChild(heart);
+  heartBody.appendChild(heart);
 }
 
 const sparkleAnimation = document.createElement('style');

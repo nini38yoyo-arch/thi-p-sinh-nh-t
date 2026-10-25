@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiệp Sinh Nhật 2026 | Phạm Minh Phương</title>
+    <meta
+      name="description"
+      content="Thiệp sinh nhật 2026 dành tặng em Phạm Minh Phương với lời chúc, thông điệp và đồng hồ đếm ngược đến sinh nhật."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="fireworks"></canvas>
+
+    <div class="bg-decor" aria-hidden="true">
+      <span class="sparkle s1">✦</span>
+      <span class="sparkle s2">✦</span>
+      <span class="sparkle s3">✦</span>
+      <span class="sparkle s4">✦</span>
+    </div>
+
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">🎉 Thiệp sinh nhật 2026</p>
+        <h1>Happy Birthday</h1>
+        <h2>Phạm Minh Phương</h2>
+        <p class="subtitle">
+          Mỗi ngày trôi qua đều mang đến một điều đẹp hơn. Hôm nay, chúng ta chúc em
+          một ngày tràn ngập niềm vui, yêu thương và những khoảnh khắc đáng nhớ.
+        </p>
+      </header>
+
+      <section class="countdown-card" aria-labelledby="countdown-heading">
+        <div class="countdown-header">
+          <p class="label">Đếm ngược đến ngày đặc biệt</p>
+          <h3 id="countdown-heading">25/10/2026 - 19:30</h3>
+        </div>
+
+        <div class="countdown-grid">
+          <div class="time-box">
+            <span id="days">00</span>
+            <small>Ngày</small>
+          </div>
+          <div class="time-box">
+            <span id="hours">00</span>
+            <small>Giờ</small>
+          </div>
+          <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Phút</small>
+          </div>
+          <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Giây</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="card-letter">
+        <div class="card-frame">
+          <div class="card-top">
+            <span class="stamp">For You</span>
+            <span class="date">25.10.2026</span>
+          </div>
+          <h3>Gửi tới em Phạm Minh Phương</h3>
+          <p>
+            Chúc em luôn tươi cười, bình an, hạnh phúc và luôn được yêu thương. Mong
+            rằng mọi ước mơ của em sẽ thành hiện thực, mọi nỗi buồn sẽ tan đi và mọi ngày
+            tới đều đầy sắc màu, ngập tràn ánh sáng.
+          </p>
+          <p class="signature">Love &amp; wishes from all of us</p>
+        </div>
+      </section>
+
+      <section class="message-grid">
+        <article class="message-box highlight">
+          <span class="icon">💌</span>
+          <h4>Lời chúc</h4>
+          <p>
+            Chúc em luôn khỏe mạnh, vui vẻ, thành công trên con đường phía trước và gặp
+            thật nhiều điều tốt đẹp trong cuộc sống.
+          </p>
+        </article>
+
+        <article class="message-box">
+          <span class="icon">🌸</span>
+          <h4>Thông điệp</h4>
+          <p>
+            Hãy sống chậm lại, yêu bản thân mình nhiều hơn và tin vào những điều tốt đẹp
+            đang chờ đợi em ở phía trước.
+          </p>
+        </article>
+
+        <article class="message-box">
+          <span class="icon">✨</span>
+          <h4>Mong ước</h4>
+          <p>
+            Mong em luôn được yêu thương, được ngưỡng mộ bởi chính sự nỗ lực, lòng tốt và
+            vẻ đẹp rất riêng của mình.
+          </p>
+        </article>
+      </section>
+
+      <section class="letter-block">
+        <div class="quote-mark">“</div>
+        <p>
+          Em là một người đáng yêu, sáng tạo và luôn khiến những người xung quanh cảm thấy
+          ấm áp. Mong rằng năm mới của em sẽ là một hành trình đầy sắc màu, êm đềm và có
+          thật nhiều khoảnh khắc khiến em nhớ mãi.
+        </p>
+      </section>
+
+      <section class="tribute">
+        <h3>Em tôi — Phạm Minh Phương</h3>
+        <p>
+          Dành cho em, một người rất đẹp trong từng cử chỉ, rất dịu và rất đáng trân trọng.
+          Chúc em luôn vui, luôn bình an và luôn giữ được nụ cười trên môi. Sinh nhật em
+          năm nay, hãy để mọi điều tốt đẹp đến với em như những tia nắng ban mai.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
